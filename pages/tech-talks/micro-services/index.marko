@@ -1,0 +1,307 @@
+lasso-page package-path="./browser.json"
+
+<script marko-init>
+var title = 'Developing Large Products with Micro-services'
+</script>
+
+<!DOCTYPE html>
+html lang="en"
+    head
+        meta charset="utf-8"
+        meta name="viewport" content="width=792, user-scalable=no"
+        meta http-equiv="x-ua-compatible" content="ie=edge"
+        title
+            - ${title}
+        lasso-head
+    body.shower.list
+        header.caption
+            h1
+                - ${title}
+
+        section.slide
+            h2
+                - ${title}
+            div.large style="margin-top: 1em;"
+                lasso-resource path="assets/logo.svg" var="logoImage"
+                app-markdown
+                    ---
+                    **Phillip Gates-Idem**,
+                    Lead Software Engineer
+
+                    <img src=logoImage.url style="width: 64px; height: auto" />
+                    Interactive Intelligence
+
+                    Durham, NC
+                    ---
+
+        section.slide
+            h2
+                - Micro-service Architecture
+            div.large
+                app-markdown
+                    ---
+                    **TechCrunch:**
+                    >Microservices is an approach to building software that shifts
+                    away from large monolithic applications toward small, loosely
+                    coupled and composable autonomous pieces.
+                    ---
+        section.slide
+            h2
+                - Monolithic Architecture
+            div.large
+                app-markdown
+                    ---
+                    A **monolithic application** describes a single-tiered software
+                    application in which the user interface and data access code
+                    are combined into a single program.
+                    ---
+        section.slide
+            h2
+                - Monolithic Architecture Diagram
+            div
+                lasso-resource path="assets/Monolithic Architecture.svg" var="monolithicArchitectureImage"
+                img [ src=monolithicArchitectureImage.url
+                    style="width: auto; height: 90%" ]
+        section.slide
+            h2
+                - Monolithic Architecture Pros & Cons
+            div.medium
+                app-markdown
+                    ---
+                    ### Pros:
+
+                    - Simple to deploy for on-premise. Just one installer.
+                    - All parts moved in lock-step together.
+
+                    ### Cons:
+
+                    - Difficult to scale horizontally
+                    - Difficult to upgrade (with possible downtime) which results in less frequent upgrades (stale deployments)
+                    ---
+        section.slide
+            h2
+                - Micro-service Architecture Diagram
+            div
+                lasso-resource path="assets/Micro-Service Architecture.svg" var="microServiceArchitectureImage"
+                img [ src=microServiceArchitectureImage.url
+                    style="width: auto; height: 90%" ]
+
+        section.slide
+            h2
+                - Companies Building Micro-services
+            div
+                lasso-resource path="assets/logo-netflix.png" var="netflixLogoImage"
+                lasso-resource path="assets/logo-spotify.png" var="spotifyLogoImage"
+
+                app-markdown
+                    ---
+                    <img src=netflixLogoImage.url style="height: 1.5em; width: auto;" />
+                    "microservices architecture with many small teams responsible for the end-to-end development of hundreds of microservices"
+                    ---
+                app-markdown
+                    ---
+                    <img src=logoImage.url style="height: 1.5em; width: auto;" /> **Interactive Intelligence:**
+                    "Purecloud is made up of over 120+ loosely coupled Microservices"
+                    ---
+                app-markdown
+                    ---
+                    <img src=spotifyLogoImage.url style="height: 1.5em; width: auto;" />
+                    "The Spotify backend architecture is heavily service oriented. The backend is composed of about a hundred services, most of them fairly small and simple. Services are written in Python or Java with a few exceptions."
+                    ---
+                app-markdown
+                    ---
+                    **Other examples:** Airbnb, Disney, Dropbox, GE, Goldman Sachs and Twitter
+                    ---
+
+        section.slide
+            h2
+                - Monolithic vs. Micro-service Architecture
+            div.medium
+                table
+                    thead
+                        tr
+                            th - Monolithic Architecture
+                            th - Micro-services Architecture
+                    tbody
+                        tr
+                            td - Tightly coupled subsystems
+                            td - Loosely coupled subsystems
+                        tr
+                            td
+                                ---
+                                Vertical scaling<br />
+                                <div.subtext>(make the machines bigger)</div>
+                                ---
+                            td
+                                ---
+                                Horizontal scaling<br />
+                                <div.subtext>(add more machines)</div>
+                                ---
+                        tr
+                            td - Upgrade and Maintenance Releases
+                            td
+                                ---
+                                Continuous Delivery
+                                <div.subtext>(small incremental updates)</div>
+                                ---
+                        tr
+                            td - Failover
+                            td - Auto scale with Load Balancing
+
+        section.slide
+            h2
+                - Vertical vs. Horizontal Scaling
+            div
+                lasso-resource path="assets/Scaling.svg" var="scalingImage"
+                img src=scalingImage.url style="width: auto; height: 90%"
+
+        section.slide
+            h2
+                - Public Facade or API Gateway
+            div.medium
+                app-markdown
+                    ---
+                    In complex micro-service architectures, a facade provides the unified public interface.
+
+                    **Features:**
+                    - Load Balancing
+                    - Path-based routing
+                    - Scatter gather
+                    - Rate Limiting
+                    - Logging / Auditing
+                    - Security
+                    ---
+
+        section.slide
+            h2
+                - Inter-service Communication
+            div.large
+                app-markdown
+                    ---
+                    - Behind the facade, services communicate with each other
+                      via HTTP or scaleable message bus.
+                        - Publish/Subscribe (a.k.a. _"pubsub"_)
+                        - Queue
+                        - Point-to-Point (Asynchronous or Synchronous)
+                    ---
+
+        section.slide
+            h2
+                - Messaging Technologies
+            div.large
+                lasso-resource path="assets/zeromq.png" var="zeromqImage"
+                lasso-resource path="assets/redis.png" var="redisImage"
+                lasso-resource path="assets/kafka.png" var="kafkaImage"
+                lasso-resource path="assets/rabbitmq.png" var="rabbitmqImage"
+
+                app-markdown
+                    ---
+                    - HTTP
+                    - WebSocket
+                    - <img src=kafkaImage.url style="height: 1.5em; width: auto;" />
+                    - <img src=redisImage.url style="height: 1em; width: auto;" />
+                    - <img src=rabbitmqImage.url style="height: 1em; width: auto;" />
+                    - <img src=zeromqImage.url style="height: 1em; width: auto;" />
+                    - <span style="color: #e47911">Amazon Simple Queue Service (SQS)</span>
+                    ---
+
+        section.slide
+            h2
+                - When to Use Micro-services
+            div.large
+                app-markdown
+                    ---
+                    - Large product with multiple teams
+                    - When your service is hosted in the "cloud"
+                      (Amazon Web Services, Google Cloud Computing, Microsoft Azure, etc.)
+                    ---
+
+        section.slide
+            h2
+                - Continuous Delivery
+            div.large
+                app-markdown
+                    ---
+                    - Move code and changes quickly through the pipeline with automated tests and deployments.
+                    - Promotion process moves immutable builds or images through environments (Dev, Test, Production)
+                    - Automate as much as possible
+                    ---
+
+        section.slide
+            h2
+                - Tooling
+            div.large
+                app-markdown
+                    ---
+                    - Need very solid build & deploy system
+                    - Strive for immutable builds
+                    - Infrastructure changes should be automated via code!
+                    - Assume that machines and services will fail
+                    - Monitoring is essential
+                    ---
+
+        section.slide
+            h2
+                - Fault Tolerence
+            div.large
+                app-markdown
+                    ---
+                    - Compute instances should be stateless and easily replaceable
+                    - Auto scaling cluster should provide redundancy
+                    - Retry logic
+                    - Durable messaging layer (Kafka, SQS, etc.)
+                    ---
+
+        section.slide
+            h2
+                - Overhead
+            div.large
+                app-markdown
+                    ---
+                    - Micro-services add extra overhead that **might not be
+                      necessary for small products**
+                    - Don’t over-engineer but **try to anticipate growth**
+                    ---
+
+        section.slide
+            h2
+                - Autonomy
+            div.large
+                app-markdown
+                    ---
+                    - Let teams own the code, infrastructure, and tools as much as possible
+                    - Make sure teams are choosing technologies for the right reasons
+                    - Minimize sharing of resources
+                        - Let teams have their own cache and database
+                    ---
+
+        section.slide
+            h2
+                - Versioning
+            div.large
+                app-markdown
+                    ---
+                    - All APIs should be versioned
+                        - e.g. `/api/v3/users`
+                        - HTTP header
+                    - Deprecate before removing
+                    - Maintain backward compatibility when possible
+                    ---
+
+        section.slide
+            h2
+                - Recap
+            div.medium
+                app-markdown
+                    ---
+                    - Divide and conquer!
+                    - Give teams autonomy about language and technology choices
+                    - Build independent micro-services that communicate with language-agnostic API
+                    - Make it easy to deploy code and infrastructure changes
+                    ---
+
+        div class="progress"
+            div
+        lasso-body
+        init-widgets
+        browser-refresh enabled="true"

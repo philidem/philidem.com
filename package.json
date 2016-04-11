@@ -1,0 +1,25 @@
+{
+  "name": "purecloud-tech-talks",
+  "version": "1.0.0",
+  "description": "PureCloud Tech Talks",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Phillip Gates-Idem <phillip.gates-idem@inin.com>",
+  "license": "ISC",
+  "dependencies": {
+    "app-module-path": "^1.0.5",
+    "highlight.js": "^9.1.0",
+    "lasso-tools": "^1.0.1",
+    "marked": "^0.3.5",
+    "marko": "^3.0.7",
+    "marko-widgets": "^6.0.0",
+    "raptor-util": "^1.0.10",
+    "shower-core": "^2.0.1",
+    "url-util": "^1.2.10"
+  },
+  "main": "server.js",
+  "devDependencies": {
+    "browser-refresh": "^1.4.10"
+  }
+}

@@ -1,0 +1,4 @@
+{
+    "sslCert": "etc/localhost-server.crt",
+    "sslKey": "etc/localhost-server.key"
+}
