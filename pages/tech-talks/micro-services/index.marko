@@ -45,6 +45,7 @@ html lang="en"
                     away from large monolithic applications toward small, loosely
                     coupled and composable autonomous pieces.
                     ---
+
         section.slide
             h2
                 - Monolithic Architecture
@@ -85,6 +86,33 @@ html lang="en"
                 lasso-resource path="assets/Micro-Service Architecture.svg" var="microServiceArchitectureImage"
                 img [ src=microServiceArchitectureImage.url
                     style="width: auto; height: 90%" ]
+
+
+
+        section.slide
+            h2
+                - Service-Oriented Architecture (SOA)
+            div.large
+                lasso-resource path="assets/its-glorious.jpg" var="itsGloriousImage"
+                app-markdown
+                    ---
+                    - Boundaries are explicit
+                    - Services are autonomous
+                    - Services share schema and contract
+                    - Service compatibility is based on policy
+
+                    **Micro-services are a specialization of SOA**
+                    ---
+
+        section.slide
+            h2
+                - Micro-services
+            div.large
+                lasso-resource path="assets/its-glorious.jpg" var="itsGloriousImage"
+                app-markdown
+                    ---
+                    <img src=itsGloriousImage.url style="width: 450px; height: auto" />
+                    ---
 
         section.slide
             h2
@@ -155,6 +183,15 @@ html lang="en"
                 lasso-resource path="assets/Scaling.svg" var="scalingImage"
                 img src=scalingImage.url style="width: auto; height: 90%"
 
+        section.slide
+            h2
+                - Horizontal Scaling
+            div.large
+                app-markdown
+                    ---
+                    - Add more machines based on current and predicted capacity
+                    - Each micro-service can scale individually
+                    ---
         section.slide
             h2
                 - Public Facade or API Gateway
@@ -250,11 +287,13 @@ html lang="en"
                     - Auto scaling cluster should provide redundancy
                     - Retry logic
                     - Durable messaging layer (Kafka, SQS, etc.)
+                    - Individual service failure less likely to bring down entire system
+                      (aim for diminished functionality)
                     ---
 
         section.slide
             h2
-                - Overhead
+                - Micro-service Overhead
             div.large
                 app-markdown
                     ---
@@ -262,17 +301,43 @@ html lang="en"
                       necessary for small products**
                     - Don’t over-engineer but **try to anticipate growth**
                     ---
+        section.slide
+            h2
+                - Containerization
+            div.large
+                lasso-resource path="assets/so-hot-right-now.jpg" var="soHotRightNowImage"
+                app-markdown
+                    ---
+                    <img src=soHotRightNowImage.url style="width: 600px; height: auto" />
+                    ---
 
         section.slide
             h2
-                - Autonomy
+                - Containerization
+            div.large
+                app-markdown
+                    ---
+                    - Services can be deployed as _containers_
+                      that get distributed across your entire
+                      compute infrastructure.
+                    - A single virtual or physical machine can host
+                      many different containers.
+                    - [Docker](https://www.docker.com/)
+                    - Container Orchestration
+                        - [Kubernetes](http://kubernetes.io/)
+                        - [Mesosphere DC/OS](https://mesosphere.com/)
+                    ---
+
+        section.slide
+            h2
+                - Team Autonomy
             div.large
                 app-markdown
                     ---
                     - Let teams own the code, infrastructure, and tools as much as possible
                     - Make sure teams are choosing technologies for the right reasons
                     - Minimize sharing of resources
-                        - Let teams have their own cache and database
+                        - For example, let teams have their own cache and database cluster
                     ---
 
         section.slide
