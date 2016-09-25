@@ -1,4 +1,4 @@
-var PROJECT_NAME = 'cobrowse-docs';
+var PROJECT_NAME = 'philidem';
 
 
 module.exports = require('lasso-tools')
