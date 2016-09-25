@@ -15,6 +15,10 @@ module.exports = require('lasso-tools')
                 {
                     template: require.resolve('pages/tech-talks/micro-services/index.marko'),
                     path: '/tech-talks/micro-services/'
+                },
+                {
+                    template: require.resolve('pages/tech-talks/open-source/index.marko'),
+                    path: '/tech-talks/open-source/'
                 }
             ]
         });

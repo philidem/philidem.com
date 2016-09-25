@@ -1,0 +1,162 @@
+lasso-page package-path="./browser.json"
+
+<script marko-init>
+var title = 'Importance of Contributing to Open Source and Side Projects'
+</script>
+
+<!DOCTYPE html>
+html lang="en"
+    head
+        meta charset="utf-8"
+        meta name="viewport" content="width=792, user-scalable=no"
+        meta http-equiv="x-ua-compatible" content="ie=edge"
+        title
+            - ${title}
+        lasso-head
+    body.shower.list
+        header.caption
+            h1
+                - ${title}
+
+        section.slide
+            h2
+                - ${title}
+            div.large style="margin-top: 1em;"
+                lasso-resource path="assets/logo.svg" var="logoImage"
+                app-markdown
+                    ---
+                    **Phillip Gates-Idem**,
+                    Lead Software Engineer
+
+                    <img src=logoImage.url style="width: 64px; height: auto" />
+                    Interactive Intelligence
+
+                    Durham, NC
+                    ---
+
+        section.slide
+            h2
+                - Why <b>You</b> Should Contribute
+            div
+                app-markdown
+                    ---
+                    - Build portfolio and reputation
+                    - Makes interviewing easier; show instead of tell!
+                    - Your open source contributions live with you across multiple companies
+                    - Your "day job" doesn’t always give you the best opportunity to showcase your work
+                    - Master the art of distributed team development
+                    ---
+
+        section.slide
+            h2
+                - Why <b>Companies</b> Should Contribute
+            div
+                app-markdown
+                    ---
+                    - Good for recruiting
+                    - Become technology leader
+                    - Improve the open source projects that they're already using
+                    - Examples of companies with commitment to open source:
+                        - Interactive Intelligence ([Marko.js](http://www.markojs.com/), [Lasso.js](https://github.com/lasso-js/lasso/))
+                        - Netflix ([Simian Army](https://github.com/Netflix/SimianArmy))
+                        - LinkedIn ([Kafka](http://kafka.apache.org/))
+                        - Facebook ([React](https://facebook.github.io/react/))
+                        - eBay ([Marko.js](http://www.markojs.com/))
+                        - Microsoft ([Chakra](https://github.com/Microsoft/ChakraCore))
+                    ---
+
+        section.slide
+            h2
+                - Considerations
+            div.medium
+                app-markdown
+                    ---
+                    - **Ask for permission** before sharing proprietary code
+                    - Make sure you **don’t violate company policies**
+                    - Don’t share code that would give significant assistance to direct competitors
+                    - Don’t work on **personal projects** during normal work hours unless given permission (possible conflict of interest and ownership issues)
+                    - Make sure you share code with the **proper license**
+                    ---
+
+        section.slide
+            h2
+                - Types of Contributions
+            div.medium
+                app-markdown
+                    ---
+                    - **Technical**
+                        - Code
+                        - Documentation
+                        - Tests
+                        - Training/speaking events (conferences, meetup.com, etc.)
+                        - Answer questions
+                    - **Non-technical**
+                        - Promotion (Twitter, Hacker News, etc.)
+                        - Organize events
+                    ---
+
+        section.slide
+            h2
+                - Interviewing?
+            div.medium
+                app-markdown
+                    ---
+                    - Ask companies about their open source policy
+                    - Look for companies that have **progressive open source policy**
+                    - Look for companies with **commitment** to open source (i.e., they put their money where their mouth is)
+                    - Avoid companies that are afraid of open source (certain security companies and government agencies might get a free pass on this)
+                    ---
+
+        section.slide
+            h2
+                - Interactive Intelligence Contributions
+            div.medium
+                app-markdown
+                    ---
+                    - Contributor to [Marko.js](http://www.markojs.com/), [Lasso.js](https://github.com/lasso-js/lasso/), and numerous other small libraries
+                    - WebRTC (bug reporting, Q&A, discussion, open source project contributor)
+                    - XMPP board member ([Xander Dumaine](http://wiki.xmpp.org/web/Xander_Dumaine_Application_2016))
+                    - Meetups ([Triangle Ember](http://www.meetup.com/Triangle-Ember/), [Triangle WebRTC](http://www.meetup.com/Triangle-WebRTC/), [Triangle DevOps](http://www.meetup.com/Triangle-DevOps/), [Triangle Node.js](http://www.meetup.com/triangle-nodejs/), [Triangle AWS](http://www.meetup.com/Triangle-AWS-Amazon-Web-Services-Meetup/))
+                    - Ember World session
+                    - GitHub (https://github.com/MyPureCloud/)
+                    ---
+
+        section.slide
+            h2
+                - Importance of Side Projects
+            div.large
+                app-markdown
+                    ---
+                    - Experiment and learn new things
+                    - Try something new without fully committing
+                    - Diversify skill set
+                    - Practice what you enjoy
+                    ---
+
+        section.slide
+            h2
+                - Get Started Now
+            div.large
+                app-markdown
+                    ---
+                    - Share the stuff you find yourself already using across multiple projects
+                    - Look for opportunities to work on small modular libraries
+                    - Try to help fix an issue instead of just reporting it
+                    - Thought the documentation was lacking? Improve it!
+                    ---
+
+        section.slide
+            h2
+                - Recap
+            div.large
+                app-markdown
+                    ---
+                    - Find opportunities to work on open source
+                    - Share your achievements with the world (including future employers)
+                    ---
+
+        div class="progress"
+            div
+        lasso-body
+        init-widgets
+        browser-refresh enabled=true

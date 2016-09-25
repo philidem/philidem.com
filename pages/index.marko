@@ -1,9 +1,5 @@
 lasso-page package-path="./browser.json"
 
-<script marko-init>
-var title = 'Developing Large Products with Micro-services';
-</script>
-
 <var urlPrefix=data.project.getConfig().getUrlPrefix() />
 
 <!DOCTYPE html>
@@ -13,13 +9,16 @@ html lang="en"
         meta name="viewport" content="width=792, user-scalable=no"
         meta http-equiv="x-ua-compatible" content="ie=edge"
         title
-            - ${title}
+            - Phillip Gates-Idem
         lasso-head
     body
         h1 - Tech Talks
         app-markdown
+            ---
             - [Developing Large Products with Micro-services](/tech-talks/micro-services/)
+            - [Importance of Contributing to Open Source and Side Projects](/tech-talks/open-source/)
+            ---
 
         lasso-body
         init-widgets
-        browser-refresh enabled="true"
+        browser-refresh enabled=true
